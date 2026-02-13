@@ -36,3 +36,5 @@ public/*.avi
 public/*.AVI
 public/thumbnails/*.jpg
 public/thumbnails/*.png
+
+docs/
