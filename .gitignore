@@ -27,4 +27,4 @@ pnpm-debug.log*
 # Vite
 *.local
 
-docs/
+docs/public/*.MOV
