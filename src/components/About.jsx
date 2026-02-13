@@ -56,7 +56,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-orange-accent/20 rounded-2xl blur-3xl"></div>
               <img 
-                src="/pancho-profil.jpeg" 
+                src="/IMG_3680.JPG.jpeg" 
                 alt="Fousseni Tchao - Expert en Communication Digitale" 
                 className="relative w-full h-[500px] object-cover rounded-2xl shadow-2xl"
                 loading="lazy"

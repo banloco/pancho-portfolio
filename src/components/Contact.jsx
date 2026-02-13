@@ -145,8 +145,8 @@ const Contact = () => {
                   Généralement, je réponds dans les 24 heures.
                 </p>
                 <a
-                  href="/Fousseni_Tchao_Responsable digital.pdf"
-                  download="Fousseni_Tchao_Responsable_digital.pdf"
+                  href="/cv_fousseni_tchao_responsable_digital.pdf"
+                  download="CV_Fousseni_Tchao.pdf"
                   className="inline-flex items-center justify-center w-full bg-orange-accent/10 hover:bg-orange-accent text-orange-accent hover:text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 border border-orange-accent/30 hover:border-orange-accent"
                 >
                   <Download size={18} className="mr-2" />

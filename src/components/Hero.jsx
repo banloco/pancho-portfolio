@@ -48,8 +48,8 @@ const Hero = () => {
               </a>
               
               <a
-                href="/Fousseni_Tchao_Responsable digital.pdf"
-                download="Fousseni_Tchao_Responsable_digital.pdf"
+                href="/cv_fousseni_tchao_responsable_digital.pdf"
+                download="CV_Fousseni_Tchao.pdf"
                 className="group inline-flex items-center justify-center bg-white/5 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 border border-white/10"
               >
                 <Download className="mr-2 group-hover:scale-110 transition-transform" size={20} />
@@ -82,7 +82,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-orange-accent/30 to-transparent rounded-2xl blur-2xl"></div>
               <div className="relative">
                 <img 
-                  src="/pancho-profil.jpeg" 
+                  src="/IMG_3680.JPG.jpeg" 
                   alt="Fousseni Tchao - Expert en Communication Digitale" 
                   className="w-full h-[500px] md:h-[600px] object-cover rounded-2xl shadow-2xl ring-2 ring-orange-accent/30"
                   loading="eager"
