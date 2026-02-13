@@ -79,35 +79,30 @@ const PortfolioGallery = () => {
 const PortfolioCard = ({ item, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleClick = () => {
+    if (item.videoUrl) {
+      window.open(item.videoUrl.replace('embed/', 'watch?v='), '_blank');
+    }
+  };
+
   return (
     <div 
       className="group relative overflow-hidden rounded-xl bg-gray-900 cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
       style={{
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
       }}
     >
-      {/* Image or Video */}
+      {/* Image/Thumbnail */}
       <div className="relative h-80 overflow-hidden">
-        {item.isVideo ? (
-          <video 
-            src={item.image} 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            controls
-            muted
-            loop
-            playsInline
-            preload="metadata"
-          />
-        ) : (
-          <img 
-            src={item.image} 
-            alt={item.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            loading="lazy"
-          />
-        )}
+        <img 
+          src={item.image} 
+          alt={item.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+        />
         <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent transition-opacity duration-300 ${
           isHovered ? 'opacity-90' : 'opacity-60'
         }`}></div>

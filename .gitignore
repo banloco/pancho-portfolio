@@ -27,4 +27,12 @@ pnpm-debug.log*
 # Vite
 *.local
 
-docs/public/*.MOV
+# Médias lourds (non utilisés, vidéos hébergées sur YouTube/Vimeo)
+public/*.MOV
+public/*.mov
+public/*.mp4
+public/*.MP4
+public/*.avi
+public/*.AVI
+public/thumbnails/*.jpg
+public/thumbnails/*.png
