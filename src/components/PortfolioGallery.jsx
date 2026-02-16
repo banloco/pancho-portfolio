@@ -8,9 +8,8 @@ const PortfolioGallery = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
-    { id: 'all', label: 'Tout', icon: null },
-    { id: 'photography', label: 'Photographie', icon: Camera },
-    { id: 'video', label: 'Vidéographie', icon: Video },
+    { id: 'all', label: 'Toutes les Vidéos', icon: null },
+    { id: 'video', label: 'Productions Vidéo', icon: Video },
   ];
 
   const filteredItems = activeFilter === 'all' 
@@ -81,7 +80,12 @@ const PortfolioCard = ({ item, index }) => {
 
   const handleClick = () => {
     if (item.videoUrl) {
-      window.open(item.videoUrl.replace('embed/', 'watch?v='), '_blank');
+      // Gérer les liens TikTok et YouTube
+      if (item.videoUrl.includes('tiktok.com')) {
+        window.open(item.videoUrl, '_blank');
+      } else {
+        window.open(item.videoUrl.replace('embed/', 'watch?v='), '_blank');
+      }
     }
   };
 
@@ -135,16 +139,38 @@ const PortfolioCard = ({ item, index }) => {
         isHovered ? 'translate-y-0' : 'translate-y-2'
       }`}>
         <h3 className="text-white font-bold text-xl mb-2">{item.title}</h3>
-        <p className={`text-gray-300 text-sm mb-4 transition-all duration-300 ${
+        <p className={`text-gray-300 text-sm mb-3 transition-all duration-300 ${
           isHovered ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
         }`}>
           {item.description}
         </p>
+        
+        {/* Skills Tags */}
+        {item.skills && (
+          <div className={`flex flex-wrap gap-2 mb-3 transition-all duration-300 ${
+            isHovered ? 'opacity-100 max-h-32' : 'opacity-0 max-h-0'
+          }`}>
+            {item.skills.slice(0, 3).map((skill, idx) => (
+              <span 
+                key={idx}
+                className="text-xs px-2 py-1 bg-orange-accent/20 text-orange-accent rounded-md border border-orange-accent/30"
+              >
+                {skill}
+              </span>
+            ))}
+            {item.skills.length > 3 && (
+              <span className="text-xs px-2 py-1 text-gray-400">
+                +{item.skills.length - 3}
+              </span>
+            )}
+          </div>
+        )}
+        
         <div className={`flex items-center gap-3 transition-all duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <button className="flex items-center gap-2 text-orange-accent hover:text-orange-500 font-semibold text-sm">
-            Voir Détails <ExternalLink size={16} />
+            Voir la Vidéo <ExternalLink size={16} />
           </button>
         </div>
       </div>
